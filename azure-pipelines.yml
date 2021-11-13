@@ -1,21 +1,21 @@
-# Creating build pipeline for dotnet app
 stages:
-  - stage: Continuosintegration
-    displayName: Continuosintegration
-    jobs:
-    - job: dotnetbuild
-      displayName: dotnetbuildjob
+  -stage: continuos-integration
+  displayname:continuos-integration  
+  jobs: 
+      - job: dotnet-build
+      displayname: dotnet-buildjob
       steps:
-      - script: dotnet restore
-        displayName: restore
-      - script: dotnet build
-        displayName: build
-      - script: dotnet test
-        displayName: test
-      - script: dotnet publish
-        displayName: publish artifact
-        
-          
+        -script: dotnet restore
+        displayname: restore
+        -script: dotnet build
+        displayname: build
+        -script: dotnet test
+        displayname:  test
+        -script: dotnet publish
+        displayname: publish artifact
+        -task:
+      
+      
 
 
 
@@ -26,3 +26,11 @@ stages:
 
 
 
+
+
+
+
+
+
+
+  -stage: continuos-Deployement
