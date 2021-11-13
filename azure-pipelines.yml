@@ -1,36 +1,15 @@
 stages:
   -stage: continuos-integration
-  displayname:continuos-integration  
+  displayname: continuosintegration  
   jobs: 
-      - job: dotnet-build
-      displayname: dotnet-buildjob
+      - job: dotnetbuild
+      displayname: dotnetbuildjob
       steps:
-        -script: dotnet restore
+        -script: dotnetrestore
         displayname: restore
-        -script: dotnet build
+        -script: dotnetbuild
         displayname: build
-        -script: dotnet test
-        displayname:  test
-        -script: dotnet publish
-        displayname: publish artifact
-        -task:
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  -stage: continuos-Deployement
+        -script: dotnettest
+        displayname: test
+        -script: dotnetpublish
+        displayname: publish
