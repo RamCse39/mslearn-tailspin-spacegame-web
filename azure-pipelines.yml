@@ -6,7 +6,7 @@ stages:
   jobs: 
       - job: dotnetbuild
       displayname: dotnetbuildjob
-      steps:
+  steps:
         -script: dotnetrestore
         displayname: restore
         -script: dotnetbuild
