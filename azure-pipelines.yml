@@ -1,4 +1,5 @@
 #defining
+language: yaml
 stages:
   -stage: continuos-integration
   displayname: continuosintegration  
